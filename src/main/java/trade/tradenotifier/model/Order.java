@@ -27,7 +27,7 @@ public class Order {
     @Column(nullable = false)
     private BigDecimal price;
     @Column(nullable = false)
-    private BigDecimal quantity;
+    private double quantity;
     @Column(nullable = false)
     private String side;
     @Column(nullable = false, name = "time_when_created")
