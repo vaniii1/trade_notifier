@@ -1,13 +1,15 @@
-package trade.tradenotifier.dto.internal;
+package trade.tradenotifier.dto.internal.order;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public record InternalOrderResponseDto(
         String symbol,
         BigDecimal price,
         BigDecimal quantity,
+        String orderType,
         String side,
-        String timeWhenCreated,
+        Date timeWhenCreated,
         String category
 ) {
 }

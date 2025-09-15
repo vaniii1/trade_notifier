@@ -24,6 +24,16 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: trigger_price
+                  type: decimal(12, 5)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: order_type
+                  type: varchar(25)
+                  constraints:
+                    nullable: false
+              - column:
                   name: quantity
                   type: decimal(14, 5)
                   constraints:

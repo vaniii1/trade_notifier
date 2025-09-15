@@ -8,4 +8,11 @@ import lombok.Data;
 public class ListOrderResponsesDto {
     @JsonProperty("list")
     private Set<SingleOrderResponseDto> orders;
+    private String category;
+
+    public Set<SingleOrderResponseDto> getOrders() {
+        orders.forEach(order ->
+                order.setCategory(category));
+        return orders;
+    }
 }

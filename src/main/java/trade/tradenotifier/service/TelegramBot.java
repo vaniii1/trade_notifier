@@ -1,6 +1,5 @@
 package trade.tradenotifier.service;
 
-import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -8,9 +7,8 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import trade.tradenotifier.dto.internal.InternalOrderResponseDto;
 import trade.tradenotifier.model.UserChat;
-import trade.tradenotifier.repository.UserChatRepository;
+import trade.tradenotifier.repository.userchat.UserChatRepository;
 
 @Component
 @RequiredArgsConstructor
@@ -68,9 +66,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     private void handleListSpotOrders(long chatId) {
-        List<InternalOrderResponseDto> spotOrders =
-                orderService.getSpotOrders();
-        sendMessage(chatId, "Active spot orders: " + spotOrders);
+        sendMessage(chatId, "Active spot orders: ");
     }
 
     private void handleListSpotPositions(long chatId) {
